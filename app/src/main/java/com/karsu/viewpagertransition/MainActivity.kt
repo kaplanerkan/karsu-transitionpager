@@ -19,34 +19,34 @@ class MainActivity : AppCompatActivity() {
 
         val items = listOf(
             TransitionItem(
-                image = "https://picsum.photos/id/1018/900/1200",
-                title = "Mountain Lake",
-                subtitle = "Bergen, Norway",
-                rating = 4.5f,
-            ),
-            TransitionItem(
-                image = "https://picsum.photos/id/1015/900/1200",
-                title = "River Valley",
-                subtitle = "Colorado, USA",
-                rating = 4.8f,
-            ),
-            TransitionItem(
-                image = "https://picsum.photos/id/1019/900/1200",
-                title = "Forest Path",
-                subtitle = "Bavaria, Germany",
-                rating = 4.2f,
-            ),
-            TransitionItem(
-                image = "https://picsum.photos/id/1039/900/1200",
-                title = "Starry Sky",
-                subtitle = "Reykjavik, Iceland",
+                image = "https://foodish-api.com/images/sushi/sushi1.jpg",
+                title = "Salmon Nigiri",
+                subtitle = "Tsukiji, Tokyo",
                 rating = 4.9f,
             ),
             TransitionItem(
-                image = "https://picsum.photos/id/1043/900/1200",
-                title = "Coastal View",
-                subtitle = "Amalfi, Italy",
-                rating = 4.6f,
+                image = "https://foodish-api.com/images/sushi/sushi2.jpg",
+                title = "Dragon Roll",
+                subtitle = "Dotonbori, Osaka",
+                rating = 4.7f,
+            ),
+            TransitionItem(
+                image = "https://foodish-api.com/images/sushi/sushi3.jpg",
+                title = "Spicy Tuna Maki",
+                subtitle = "Gion, Kyoto",
+                rating = 4.5f,
+            ),
+            TransitionItem(
+                image = "https://foodish-api.com/images/sushi/sushi4.jpg",
+                title = "Uni Gunkan",
+                subtitle = "Sapporo, Hokkaido",
+                rating = 4.8f,
+            ),
+            TransitionItem(
+                image = "https://foodish-api.com/images/sushi/sushi5.jpg",
+                title = "California Roll",
+                subtitle = "Hakata, Fukuoka",
+                rating = 4.3f,
             ),
         )
 
