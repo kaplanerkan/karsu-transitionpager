@@ -15,16 +15,13 @@ library module and a full sushi-ordering demo built on top of it.
 
 ## Demo
 
-<video
-  src="https://github.com/kaplanerkan/karsu-transitionpager/raw/main/screenshots/demo.mp4"
-  controls
-  muted
-  loop
-  playsinline
-  width="320">
-  Your browser does not render embedded videos.
-  <a href="https://github.com/kaplanerkan/karsu-transitionpager/raw/main/screenshots/demo.mp4">Download demo.mp4</a>
-</video>
+<p align="center">
+  <img src="screenshots/demo.gif" alt="KarSu Transition Pager demo" width="320" />
+</p>
+
+> The animation above is an auto-playing GIF. A higher-quality source
+> recording is available as [`screenshots/demo.mp4`](screenshots/demo.mp4)
+> for anyone who wants the original 30 fps clip.
 
 ## Screenshots
 
