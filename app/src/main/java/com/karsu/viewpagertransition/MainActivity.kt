@@ -17,41 +17,56 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val items = listOf(
-            TransitionItem(
-                image = "https://foodish-api.com/images/sushi/sushi1.jpg",
-                title = "Salmon Nigiri",
-                subtitle = "Tsukiji, Tokyo",
-                rating = 4.9f,
+        val sushis = listOf(
+            Sushi(
+                item = TransitionItem(
+                    image = "https://foodish-api.com/images/sushi/sushi1.jpg",
+                    title = "Salmon Nigiri",
+                    subtitle = "Tsukiji, Tokyo",
+                    rating = 4.9f,
+                ),
+                price = 85,
             ),
-            TransitionItem(
-                image = "https://foodish-api.com/images/sushi/sushi2.jpg",
-                title = "Dragon Roll",
-                subtitle = "Dotonbori, Osaka",
-                rating = 4.7f,
+            Sushi(
+                item = TransitionItem(
+                    image = "https://foodish-api.com/images/sushi/sushi2.jpg",
+                    title = "Dragon Roll",
+                    subtitle = "Dotonbori, Osaka",
+                    rating = 4.7f,
+                ),
+                price = 120,
             ),
-            TransitionItem(
-                image = "https://foodish-api.com/images/sushi/sushi3.jpg",
-                title = "Spicy Tuna Maki",
-                subtitle = "Gion, Kyoto",
-                rating = 4.5f,
+            Sushi(
+                item = TransitionItem(
+                    image = "https://foodish-api.com/images/sushi/sushi3.jpg",
+                    title = "Spicy Tuna Maki",
+                    subtitle = "Gion, Kyoto",
+                    rating = 4.5f,
+                ),
+                price = 95,
             ),
-            TransitionItem(
-                image = "https://foodish-api.com/images/sushi/sushi4.jpg",
-                title = "Uni Gunkan",
-                subtitle = "Sapporo, Hokkaido",
-                rating = 4.8f,
+            Sushi(
+                item = TransitionItem(
+                    image = "https://foodish-api.com/images/sushi/sushi4.jpg",
+                    title = "Uni Gunkan",
+                    subtitle = "Sapporo, Hokkaido",
+                    rating = 4.8f,
+                ),
+                price = 140,
             ),
-            TransitionItem(
-                image = "https://foodish-api.com/images/sushi/sushi5.jpg",
-                title = "California Roll",
-                subtitle = "Hakata, Fukuoka",
-                rating = 4.3f,
+            Sushi(
+                item = TransitionItem(
+                    image = "https://foodish-api.com/images/sushi/sushi5.jpg",
+                    title = "California Roll",
+                    subtitle = "Hakata, Fukuoka",
+                    rating = 4.3f,
+                ),
+                price = 75,
             ),
         )
 
-        binding.transitionPager.setItems(items)
-        binding.transitionPager.onItemClick = { item, _, shared ->
+        binding.transitionPager.setItems(sushis.map { it.item })
+        binding.transitionPager.onItemClick = { item, position, shared ->
             shared.image.transitionName = DetailActivity.TRANSITION_IMAGE
 
             val intent = Intent(this, DetailActivity::class.java).apply {
@@ -59,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                 putExtra(DetailActivity.EXTRA_TITLE, item.title)
                 putExtra(DetailActivity.EXTRA_SUBTITLE, item.subtitle)
                 putExtra(DetailActivity.EXTRA_RATING, item.rating)
+                putExtra(DetailActivity.EXTRA_PRICE, sushis[position].price)
             }
 
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
@@ -68,4 +84,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent, options.toBundle())
         }
     }
+
+    private data class Sushi(
+        val item: TransitionItem,
+        val price: Int,
+    )
 }

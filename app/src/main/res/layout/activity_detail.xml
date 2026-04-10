@@ -1,92 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:orientation="vertical">
+    android:background="#FAFAFA">
 
-    <FrameLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="280dp">
-
-        <ImageView
-            android:id="@+id/detail_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#222222"
-            android:contentDescription="@null"
-            android:scaleType="centerCrop" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/detail_scrim" />
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btn_add_to_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/detail_title"
+            <!-- Hero image -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <ImageView
+                    android:id="@+id/detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#222222"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/detail_scrim" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/detail_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:shadowColor="#88000000"
+                        android:shadowRadius="4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        tools:text="Salmon Nigiri" />
+
+                    <TextView
+                        android:id="@+id/detail_subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:shadowColor="#88000000"
+                        android:shadowRadius="4"
+                        android:textColor="#EEEEEE"
+                        android:textSize="14sp"
+                        tools:text="Tsukiji, Tokyo" />
+
+                    <RatingBar
+                        android:id="@+id/detail_rating"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:isIndicator="true"
+                        android:numStars="5" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Content -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                tools:text="Mountain Lake" />
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp">
 
-            <TextView
-                android:id="@+id/detail_subtitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:textColor="#EEEEEE"
-                android:textSize="14sp"
-                tools:text="Bergen, Norway" />
+                <!-- Base price -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-            <RatingBar
-                android:id="@+id/detail_rating"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:isIndicator="true"
-                android:numStars="5" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/detail_base_price"
+                        android:textColor="#666666"
+                        android:textSize="13sp" />
 
+                    <TextView
+                        android:id="@+id/detail_base_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#111111"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="₺85" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/detail_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/detail_description"
+                    android:textColor="#444444"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#EEEEEE" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/detail_garnishes"
+                    android:textColor="#111111"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Soy sauce -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/soy_sauce"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_soy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:selectionRequired="true"
+                    app:singleLine="false"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_soy_regular"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/soy_regular" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_soy_low"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/soy_low" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_soy_none"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/soy_none" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Wasabi -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/wasabi"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_wasabi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:selectionRequired="true"
+                    app:singleLine="false"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_wasabi_none"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/wasabi_none" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_wasabi_mild"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wasabi_mild" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_wasabi_extra"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wasabi_extra" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Extras (multi-select) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/extras"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_extras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:singleLine="false"
+                    app:singleSelection="false">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_extra_ginger"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/extra_ginger" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_extra_mayo"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/extra_mayo" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_extra_tempura"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/extra_tempura" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Quantity -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#EEEEEE" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/quantity"
+                        android:textColor="#111111"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_minus"
+                        style="@style/Widget.Material3.Button.IconButton.Outlined"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/decrease_quantity"
+                        app:icon="@android:drawable/ic_media_previous" />
+
+                    <TextView
+                        android:id="@+id/tv_quantity"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#111111"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:text="1" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_plus"
+                        style="@style/Widget.Material3.Button.IconButton.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/increase_quantity"
+                        app:icon="@android:drawable/ic_media_next" />
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/detail_close"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="top|end"
-            android:layout_margin="12dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/close"
-            android:src="@android:drawable/ic_menu_close_clear_cancel"
-            app:tint="#FFFFFF" />
-
-    </FrameLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="6dp"
-            android:padding="20dp"
-            android:text="@string/detail_lorem"
-            android:textColor="#333333"
-            android:textSize="15sp" />
-
     </androidx.core.widget.NestedScrollView>
 
-</LinearLayout>
+    <!-- Sticky bottom bar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_to_cart"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:textSize="16sp"
+        app:cornerRadius="16dp"
+        app:icon="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Sepete Ekle  •  ₺85" />
+
+    <!-- Close button (floating over hero) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/detail_close"
+        style="@style/Widget.Material3.Button.IconButton.Filled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:contentDescription="@string/close"
+        app:backgroundTint="#66000000"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
