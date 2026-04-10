@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
-import androidx.core.view.ViewCompat
 import com.karsu.transitionpager.TransitionItem
 import com.karsu.viewpagertransition.databinding.ActivityMainBinding
 
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.transitionPager.setItems(items)
         binding.transitionPager.onItemClick = { item, _, shared ->
-            ViewCompat.setTransitionName(shared.image, DetailActivity.TRANSITION_IMAGE)
+            shared.image.transitionName = DetailActivity.TRANSITION_IMAGE
 
             val intent = Intent(this, DetailActivity::class.java).apply {
                 putExtra(DetailActivity.EXTRA_IMAGE_URL, item.image.toString())
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 this,
-                Pair.create(shared.image as android.view.View, DetailActivity.TRANSITION_IMAGE),
+                Pair(shared.image, DetailActivity.TRANSITION_IMAGE),
             )
             startActivity(intent, options.toBundle())
         }

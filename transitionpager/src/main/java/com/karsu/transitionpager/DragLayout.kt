@@ -7,8 +7,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import android.widget.FrameLayout
-import androidx.core.view.GestureDetectorCompat
-import androidx.core.view.ViewCompat
 import androidx.customview.widget.ViewDragHelper
 import kotlin.math.abs
 
@@ -35,7 +33,7 @@ class DragLayout @JvmOverloads constructor(
     private var dragTopDest: Int = 0
 
     private val dragHelper: ViewDragHelper
-    private val moveDetector: GestureDetectorCompat
+    private val moveDetector: GestureDetector
     private val touchSlop: Int
 
     private var originX: Int = 0
@@ -61,7 +59,7 @@ class DragLayout @JvmOverloads constructor(
         dragHelper = ViewDragHelper.create(this, 10f, DragHelperCallback()).apply {
             setEdgeTrackingEnabled(ViewDragHelper.EDGE_TOP)
         }
-        moveDetector = GestureDetectorCompat(context, MoveDetector()).apply {
+        moveDetector = GestureDetector(context, MoveDetector()).apply {
             setIsLongpressEnabled(false)
         }
         touchSlop = ViewConfiguration.get(context).scaledTouchSlop
@@ -76,7 +74,7 @@ class DragLayout @JvmOverloads constructor(
             val top = topView ?: return@setOnClickListener
             if (currentState == STATE_CLOSE) {
                 if (dragHelper.smoothSlideViewTo(top, originX, dragTopDest)) {
-                    ViewCompat.postInvalidateOnAnimation(this)
+                    postInvalidateOnAnimation()
                 }
             } else {
                 gotoDetailListener?.invoke()
@@ -135,7 +133,7 @@ class DragLayout @JvmOverloads constructor(
                 }
             }
             if (dragHelper.smoothSlideViewTo(releasedChild, originX, finalY)) {
-                ViewCompat.postInvalidateOnAnimation(this@DragLayout)
+                this@DragLayout.postInvalidateOnAnimation()
             }
         }
     }
@@ -180,7 +178,7 @@ class DragLayout @JvmOverloads constructor(
 
     override fun computeScroll() {
         if (dragHelper.continueSettling(true)) {
-            ViewCompat.postInvalidateOnAnimation(this)
+            postInvalidateOnAnimation()
         }
     }
 
