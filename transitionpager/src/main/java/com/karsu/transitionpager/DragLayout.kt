@@ -7,7 +7,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import android.widget.FrameLayout
-import androidx.core.content.res.use
 import androidx.core.view.GestureDetectorCompat
 import androidx.core.view.ViewCompat
 import androidx.customview.widget.ViewDragHelper
@@ -50,11 +49,14 @@ class DragLayout @JvmOverloads constructor(
     var gotoDetailListener: (() -> Unit)? = null
 
     init {
-        context.obtainStyledAttributes(attrs, R.styleable.DragLayout, 0, 0).use { a ->
+        val a = context.obtainStyledAttributes(attrs, R.styleable.DragLayout, 0, 0)
+        try {
             bottomDragVisibleHeight =
                 a.getDimension(R.styleable.DragLayout_bottomDragVisibleHeight, 0f).toInt()
             bottomExtraIndicatorHeight =
                 a.getDimension(R.styleable.DragLayout_bottomExtraIndicatorHeight, 0f).toInt()
+        } finally {
+            a.recycle()
         }
         dragHelper = ViewDragHelper.create(this, 10f, DragHelperCallback()).apply {
             setEdgeTrackingEnabled(ViewDragHelper.EDGE_TOP)
