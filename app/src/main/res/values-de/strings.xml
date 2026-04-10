@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KarSu Sushi</string>
+    <string name="header_title">SUSHI-MENÜ</string>
+    <string name="close">Schließen</string>
+
+    <!-- Detail screen -->
+    <string name="detail_base_price">Produktpreis</string>
+    <string name="detail_description">Frisch zubereitetes traditionelles japanisches Rezept. Sorgfältig ausgewählter Fisch, mit Reisessig gewürzter Shari-Reis und erstklassige Nori-Blätter. Die Signatur-Garnierung unseres Küchenchefs, heute servierfertig.</string>
+    <string name="detail_garnishes">Beilagen</string>
+
+    <string name="soy_sauce">Sojasoße</string>
+    <string name="soy_regular">Normal</string>
+    <string name="soy_low">Salzarm</string>
+    <string name="soy_none">Keine</string>
+
+    <string name="wasabi">Wasabi</string>
+    <string name="wasabi_none">Ohne</string>
+    <string name="wasabi_mild">Mild</string>
+    <string name="wasabi_extra">Extra</string>
+
+    <string name="extras">Extras</string>
+    <string name="extra_ginger">Ingwer +₺5</string>
+    <string name="extra_mayo">Scharfe Mayo +₺8</string>
+    <string name="extra_tempura">Tempura-Flocken +₺10</string>
+
+    <string name="quantity">Menge</string>
+    <string name="increase_quantity">Erhöhen</string>
+    <string name="decrease_quantity">Verringern</string>
+
+    <string name="add_to_cart_format">In den Warenkorb  •  ₺%1$d</string>
+    <string name="added_to_cart_format">%1$d × %2$s in den Warenkorb gelegt (₺%3$d)</string>
+</resources>

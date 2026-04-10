@@ -3,7 +3,9 @@ package com.karsu.viewpagertransition
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.os.LocaleListCompat
 import androidx.core.util.Pair
 import com.karsu.transitionpager.TransitionItem
 import com.karsu.viewpagertransition.databinding.ActivityMainBinding
@@ -17,6 +19,40 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupLanguageChips()
+        setupPager()
+    }
+
+    private fun setupLanguageChips() {
+        val currentTag = AppCompatDelegate.getApplicationLocales()
+            .toLanguageTags()
+            .substringBefore('-')
+            .ifEmpty { "en" }
+
+        val checkedId = when (currentTag) {
+            "tr" -> R.id.chip_lang_tr
+            "de" -> R.id.chip_lang_de
+            else -> R.id.chip_lang_en
+        }
+        binding.languageChips.check(checkedId)
+
+        binding.chipLangEn.setOnClickListener { switchLocale("en") }
+        binding.chipLangTr.setOnClickListener { switchLocale("tr") }
+        binding.chipLangDe.setOnClickListener { switchLocale("de") }
+    }
+
+    private fun switchLocale(languageTag: String) {
+        val current = AppCompatDelegate.getApplicationLocales()
+            .toLanguageTags()
+            .substringBefore('-')
+            .ifEmpty { "en" }
+        if (current == languageTag) return
+        AppCompatDelegate.setApplicationLocales(
+            LocaleListCompat.forLanguageTags(languageTag),
+        )
+    }
+
+    private fun setupPager() {
         // Wikimedia Commons'tan doğrulanmış sushi fotoğrafları (Category:Sushi).
         // KarSuApp.kt'deki özel OkHttp User-Agent sayesinde Coil bu URL'leri
         // Wikimedia'nın UA politikasını bozmadan çekebiliyor.

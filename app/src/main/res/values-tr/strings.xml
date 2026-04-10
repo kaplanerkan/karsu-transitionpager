@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KarSu Sushi</string>
+    <string name="header_title">SUSHI MENÜSÜ</string>
+    <string name="close">Kapat</string>
+
+    <!-- Detail screen -->
+    <string name="detail_base_price">Ürün fiyatı</string>
+    <string name="detail_description">Taze hazırlanmış geleneksel Japon tarifi. Özenle seçilmiş balık, sirke ile aromalandırılmış shari pirinci ve birinci sınıf deniz yosunu. Şefimizin imza eşliği ile bugün servise hazır.</string>
+    <string name="detail_garnishes">Çeşniler</string>
+
+    <string name="soy_sauce">Soya Sosu</string>
+    <string name="soy_regular">Normal</string>
+    <string name="soy_low">Az Tuzlu</string>
+    <string name="soy_none">Soyasız</string>
+
+    <string name="wasabi">Wasabi</string>
+    <string name="wasabi_none">Yok</string>
+    <string name="wasabi_mild">Az</string>
+    <string name="wasabi_extra">Fazla</string>
+
+    <string name="extras">Ekstra</string>
+    <string name="extra_ginger">Zencefil +₺5</string>
+    <string name="extra_mayo">Baharatlı Mayo +₺8</string>
+    <string name="extra_tempura">Tempura Kırıntısı +₺10</string>
+
+    <string name="quantity">Adet</string>
+    <string name="increase_quantity">Arttır</string>
+    <string name="decrease_quantity">Azalt</string>
+
+    <string name="add_to_cart_format">Sepete Ekle  •  ₺%1$d</string>
+    <string name="added_to_cart_format">%1$d adet %2$s sepete eklendi (₺%3$d)</string>
+</resources>
