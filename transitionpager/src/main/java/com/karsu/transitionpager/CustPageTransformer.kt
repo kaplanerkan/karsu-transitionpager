@@ -7,8 +7,8 @@ import kotlin.math.abs
 
 /**
  * ViewPager2 için parallax + ölçek dönüşümü uygular.
- * Orijinal [xmuSistone/ViewpagerTransition](https://github.com/xmuSistone/ViewpagerTransition)
- * projesindeki `CustPagerTransformer` sınıfının ViewPager2'ye uyarlanmış sürümüdür.
+ * Ortadaki sayfa 1.0 ölçekte kalır, yanlara kayan sayfalar küçülür ve yatayda
+ * merkeze doğru kaydırılır; bu sayede kart "derinliğe" gidiyormuş izlenimi verir.
  */
 class CustPageTransformer(context: Context) : ViewPager2.PageTransformer {
 

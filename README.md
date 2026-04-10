@@ -1,8 +1,7 @@
 # KarSu Transition Pager
 
-A modern Kotlin + XML Android project that ports
-[xmuSistone/ViewpagerTransition](https://github.com/xmuSistone/ViewpagerTransition)
-to a reusable library module and builds a full sushi-ordering demo on top of it.
+A modern Kotlin + XML Android project that ships a reusable parallax-pager
+library module and a full sushi-ordering demo built on top of it.
 
 - 100% Kotlin (no Compose — idiomatic Views + XML)
 - `ViewPager2` with a custom parallax `PageTransformer`
@@ -193,8 +192,6 @@ the URLs in `MainActivity.setupPager()` with `@DrawableRes` resource IDs —
 
 ## Credits
 
-- The original Java project this is based on:
-  [xmuSistone/ViewpagerTransition](https://github.com/xmuSistone/ViewpagerTransition)
 - Sushi photographs: Wikimedia Commons contributors (CC BY-SA), loaded
   through the
   [Wikimedia Commons Category:Sushi](https://commons.wikimedia.org/wiki/Category:Sushi)
