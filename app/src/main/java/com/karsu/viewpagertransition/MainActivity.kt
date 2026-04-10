@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val sushis = listOf(
             Sushi(
                 item = TransitionItem(
-                    image = "https://foodish-api.com/images/sushi/sushi1.jpg",
+                    image = "https://loremflickr.com/900/1200/sushi?lock=1",
                     title = "Salmon Nigiri",
                     subtitle = "Tsukiji, Tokyo",
                     rating = 4.9f,
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://foodish-api.com/images/sushi/sushi2.jpg",
+                    image = "https://loremflickr.com/900/1200/sushi?lock=2",
                     title = "Dragon Roll",
                     subtitle = "Dotonbori, Osaka",
                     rating = 4.7f,
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://foodish-api.com/images/sushi/sushi3.jpg",
+                    image = "https://loremflickr.com/900/1200/sushi?lock=3",
                     title = "Spicy Tuna Maki",
                     subtitle = "Gion, Kyoto",
                     rating = 4.5f,
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://foodish-api.com/images/sushi/sushi4.jpg",
+                    image = "https://loremflickr.com/900/1200/sushi?lock=4",
                     title = "Uni Gunkan",
                     subtitle = "Sapporo, Hokkaido",
                     rating = 4.8f,
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://foodish-api.com/images/sushi/sushi5.jpg",
+                    image = "https://loremflickr.com/900/1200/sushi?lock=5",
                     title = "California Roll",
                     subtitle = "Hakata, Fukuoka",
                     rating = 4.3f,
