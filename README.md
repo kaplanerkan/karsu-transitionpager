@@ -197,3 +197,30 @@ the URLs in `MainActivity.setupPager()` with `@DrawableRes` resource IDs —
   [Wikimedia Commons Category:Sushi](https://commons.wikimedia.org/wiki/Category:Sushi)
   API.
 - Image loading: [Coil](https://github.com/coil-kt/coil)
+
+---
+
+## License
+
+```
+Copyright 2026 kaplanerkan
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+See the full license text in [`LICENSE`](LICENSE).
+
+**TL;DR** — Apache 2.0 is permissive: you can use, modify and redistribute
+this code (including inside closed-source commercial products) as long as
+you preserve the copyright notice and don't misuse the project's name or
+trademarks. There is no obligation to open-source your own app.
