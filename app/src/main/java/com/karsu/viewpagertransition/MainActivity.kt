@@ -17,10 +17,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Wikimedia Commons'tan doğrulanmış sushi fotoğrafları (Category:Sushi).
+        // KarSuApp.kt'deki özel OkHttp User-Agent sayesinde Coil bu URL'leri
+        // Wikimedia'nın UA politikasını bozmadan çekebiliyor.
         val sushis = listOf(
             Sushi(
                 item = TransitionItem(
-                    image = "https://loremflickr.com/900/1200/sushi?lock=1",
+                    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Another_sushi.jpg/900px-Another_sushi.jpg",
                     title = "Salmon Nigiri",
                     subtitle = "Tsukiji, Tokyo",
                     rating = 4.9f,
@@ -29,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://loremflickr.com/900/1200/sushi?lock=2",
+                    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Colorful_sushi_lunch.jpg/900px-Colorful_sushi_lunch.jpg",
                     title = "Dragon Roll",
                     subtitle = "Dotonbori, Osaka",
                     rating = 4.7f,
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://loremflickr.com/900/1200/sushi?lock=3",
+                    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Eight_Different_Types_of_Sushi.jpg/900px-Eight_Different_Types_of_Sushi.jpg",
                     title = "Spicy Tuna Maki",
                     subtitle = "Gion, Kyoto",
                     rating = 4.5f,
@@ -47,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://loremflickr.com/900/1200/sushi?lock=4",
+                    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Hyousei_sasamaki.jpg/900px-Hyousei_sasamaki.jpg",
                     title = "Uni Gunkan",
                     subtitle = "Sapporo, Hokkaido",
                     rating = 4.8f,
@@ -56,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             ),
             Sushi(
                 item = TransitionItem(
-                    image = "https://loremflickr.com/900/1200/sushi?lock=5",
+                    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Meet-_Sushi.jpg/900px-Meet-_Sushi.jpg",
                     title = "California Roll",
                     subtitle = "Hakata, Fukuoka",
                     rating = 4.3f,
