@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KarSu Transition Pager</string>
+    <string name="header_title">INTEREST</string>
+    <string name="close">Close</string>
+    <string name="detail_lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate, nulla sed tempor dapibus, justo est vehicula quam, in pretium lectus elit at risus. Curabitur vehicula tincidunt nibh, ac congue arcu tincidunt vitae. Donec consequat, lorem vitae ultricies ullamcorper, dui leo facilisis purus, nec tempor magna urna in quam. Morbi non lorem ac nunc ullamcorper gravida vitae non lectus.\n\nNullam hendrerit, elit vitae commodo porttitor, sapien magna dapibus augue, in commodo lorem lacus eu magna. Integer mattis malesuada sem, ac mollis nibh varius eget. Suspendisse potenti.</string>
+</resources>

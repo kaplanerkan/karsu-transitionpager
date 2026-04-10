@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tp_card_bottom_info_height">150dp</dimen>
+    <dimen name="tp_card_extra_height">20dp</dimen>
+    <dimen name="tp_bottom_panel_height">320dp</dimen>
+</resources>
